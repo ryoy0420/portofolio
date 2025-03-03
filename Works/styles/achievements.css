@@ -1,0 +1,213 @@
+/* achievements.css - プロフェッショナル版 */
+
+.achievement-card {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+    padding: 2.5rem;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid #2c3e50; /* より落ち着いた色調 */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    position: relative;
+  }
+  
+  .achievement-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.12);
+  }
+  
+  .achievement-header {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 2rem;
+  }
+  
+  .achievement-icon {
+    font-size: 2.25rem;
+    color: #2c3e50;
+    margin-right: 1.75rem;
+    padding-top: 0.25rem;
+  }
+  
+  .achievement-title h3 {
+    font-size: 1.6rem;
+    font-weight: 600;
+    margin: 0 0 0.75rem 0;
+    color: #2c3e50;
+    letter-spacing: -0.5px;
+  }
+  
+  .achievement-title p {
+    color: #5a6a7e;
+    margin: 0 0 0.75rem 0;
+    font-size: 1.05rem;
+    line-height: 1.6;
+  }
+  
+  .achievement-tag {
+    display: inline-block;
+    background-color: #f0f4f8;
+    color: #2c3e50;
+    padding: 0.4rem 0.8rem;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-top: 0.5rem;
+  }
+  
+  .achievement-metrics {
+    background-color: #f7f9fc;
+    border-radius: 8px;
+    padding: 2rem;
+    position: relative;
+  }
+  
+  .metrics-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .metrics-title {
+    font-weight: 600;
+    color: #2c3e50;
+    display: flex;
+    align-items: center;
+    font-size: 1.15rem;
+  }
+  
+  .metrics-title i {
+    margin-right: 0.75rem;
+    color: #3498db;
+  }
+  
+  .metrics-date {
+    font-size: 0.9rem;
+    color: #7f8c9a;
+    font-weight: 500;
+  }
+  
+  .metrics-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.25rem;
+  }
+  
+  .metric-card {
+    background-color: white;
+    border-radius: 8px;
+    padding: 1.5rem;
+    text-align: center;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .metric-card:nth-child(1) {
+    border-top: 4px solid #3498db; /* 1位 - 青 */
+  }
+  
+  .metric-card:nth-child(2) {
+    border-top: 4px solid #2ecc71; /* 2位 - 緑 */
+  }
+  
+  .metric-card:nth-child(3) {
+    border-top: 4px solid #f39c12; /* 3位 - オレンジ */
+  }
+  
+  .metric-number {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+    line-height: 1;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .metric-card:nth-child(1) .metric-number {
+    color: #3498db;
+  }
+  
+  .metric-card:nth-child(2) .metric-number {
+    color: #2ecc71;
+  }
+  
+  .metric-card:nth-child(3) .metric-number {
+    color: #f39c12;
+  }
+  
+  .metric-label {
+    font-size: 0.875rem;
+    color: #5a6a7e;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .metric-description {
+    font-size: 1rem;
+    margin-top: 0.4rem;
+    color: #7f8c9a;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .metric-card::before {
+    content: '';
+    position: absolute;
+    top: -10px;
+    right: -10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    background-color: rgba(0, 0, 0, 0.03);
+    z-index: 1;
+  }
+  
+  .achievement-info {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(0, 0, 0, 0.05);
+    display: flex;
+    align-items: center;
+  }
+  
+  .info-icon {
+    color: #3498db;
+    margin-right: 0.75rem;
+    font-size: 1.1rem;
+  }
+  
+  .info-text {
+    font-size: 0.95rem;
+    color: #5a6a7e;
+    line-height: 1.5;
+  }
+  
+  /* レスポンシブ対応 */
+  @media (max-width: 768px) {
+    .metrics-grid {
+      grid-template-columns: 1fr;
+      gap: 1rem;
+    }
+    
+    .achievement-header {
+      flex-direction: column;
+    }
+    
+    .achievement-icon {
+      margin-bottom: 1rem;
+      margin-right: 0;
+    }
+    
+    .achievement-card {
+      padding: 1.5rem;
+    }
+    
+    .achievement-metrics {
+      padding: 1.5rem;
+    }
+  }

@@ -1,0 +1,763 @@
+/* article1-improved.css */
+/*  🎨 カラーパレット変更  🎨 */
+/* メインカラー: 明るいブルーグリーン、アクセントカラー: ゴールド、サブカラー: ダークティール */
+:root {
+    --primary-color: #3AB7BF; /* 明るいブルーグリーン */
+    --secondary-color-gold: #D4AF37; /* ゴールド (アクセントカラー) */
+    --primary-dark-color: #004D4D; /* ダークティール (サブカラー、落ち着きを出す部分に) */
+    --gray-50-color: #f9fafb;
+    --gray-100-color: #f3f4f6;
+    --gray-500-color: #6b7280;
+    --gray-600-color: #4b5563;
+    --white-color: #fff;
+    --black-color: #333; /* ブログタグ文字色など */
+    --blog-yellow-color: #fff9c4; /* 薄いパステルイエロー (ブログタグ背景色) */
+    --orange-download-button: #ff8c00; /* ダウンロードボタン色 */
+    --orange-download-button-hover: #cc6600; /* ダウンロードボタンホバー色 */
+    --blue-pdf-title: #0056b3; /* PDFタイトル背景色 */
+}
+
+
+body {
+    /*  ✏️ フォントと基本設定  ✏️ */
+    font-family: 'Noto Sans JP', sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.8; /* 行間をさらに広げ可読性向上 */
+    color: var(--gray-600-color); /* 本文の基本色を少し濃いめのグレーに */
+    background-color: var(--gray-50-color); /* 背景色を薄いグレーに */
+    scroll-behavior: smooth; /* スムーズスクロールを有効にする */
+}
+
+/*  📐 レイアウト用クラス (Tailwind CSS風ユーティリティクラスを参考に、必要最低限に) 📐 */
+.min-h-screen { min-height: 100vh; }
+.bg-white { background-color: var(--white-color); }
+.flex { display: flex; }
+.flex-col { flex-direction: column; }
+.flex-grow { flex-grow: 1; }
+.justify-between { justify-content: space-between; }
+.items-center { align-items: center; }
+.gap-4 { gap: 1rem; }
+.gap-2 { gap: 0.5rem; }
+.gap-8 { gap: 2rem; }
+.px-8 { padding-left: 2rem; padding-right: 2rem; }
+.py-4 { padding-top: 1rem; padding-bottom: 1rem; }
+.py-8 { padding-top: 2rem; padding-bottom: 2rem; }
+.py-2 { padding-top: 0.5rem; padding-bottom: 0.5rem; }
+.px-3 { padding-left: 0.75rem; padding-right: 0.75rem; }
+.py-1 { padding-top: 0.25rem; padding-bottom: 0.25rem; }
+.p-6 { padding: 1.5rem; }
+.p-8 { padding: 2rem; }
+.mb-4 { margin-bottom: 1rem; }
+.mb-8 { margin-bottom: 2rem; }
+.mb-6 { margin-bottom: 1.5rem; }
+.text-sm { font-size: 0.875rem; line-height: 1.25rem; }
+.text-lg { font-size: 1.125rem; line-height: 1.75rem; }
+.text-xl { font-size: 1.25rem; line-height: 1.75rem; }
+.text-2xl { font-size: 1.5rem; line-height: 2rem; }
+.text-3xl { font-size: 1.875rem; line-height: 2.25rem; }
+.font-medium { font-weight: 500; }
+.font-bold { font-weight: bold; }
+.text-gray-500 { color: var(--gray-500-color); }
+.text-gray-600 { color: var(--gray-600-color); }
+.text-white { color: var(--white-color); }
+.text-primary-dark { color: var(--primary-dark-color); }
+.rounded { border-radius: 0.25rem; }
+.rounded-lg { border-radius: 0.5rem; }
+.rounded-r { border-top-right-radius: 0.25rem; border-bottom-right-radius: 0.25rem; }
+.bg-gray-50 { background-color: var(--gray-50-color); }
+.bg-gray-100 { background-color: var(--gray-100-color); }
+.bg-primary-dark { background-color: var(--primary-dark-color); }
+.bg-secondary-gold { background-color: var(--secondary-color-gold); }
+.bg-blog-yellow {
+    background-color: var(--blog-yellow-color); /* パステルイエローに変更 */
+    color: var(--black-color); /* ブログタグの文字色を黒に */
+}
+.bg-primary-dark-alpha-5 { background-color: rgba(0, 77, 77, 0.05); }
+.border-b-2 { border-bottom-width: 2px; }
+.border-l-4 { border-left-width: 4px; }
+.border-l-2 { border-left-width: 2px; }
+.border-secondary-gold { border-color: var(--secondary-color-gold); }
+.border-bottom { border-bottom: 1px solid #ddd; /* 例、必要に応じて調整 */ }
+.pb-2 { padding-bottom: 0.5rem; }
+.pl-4 { padding-left: 1rem; }
+.max-w-6xl { max-width: 72rem; /* 1152px */ }
+.max-w-4xl { max-width: 56rem; /* 896px */ }
+.w-72 { width: 18rem; /* 288px */ }
+.w-full { width: 100%; }
+.h-12 { height: 3rem; /* 48px */ }
+.h-400px { height: 400px; }
+.object-cover { object-fit: cover; }
+.shadow-sm { box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05); }
+
+
+/*  📝  プロStyle (proseクラス) - 必要に応じてカスタマイズ  📝 */
+.prose {
+    max-width: 100%; /* 親要素に合わせて最大幅 */
+    font-size: 1.1rem; /* 基本フォントサイズを少し大きく */
+    color: var(--gray-600-color); /* prose内のテキスト色 */
+}
+
+.prose > p { margin-bottom: 1.2em; } /* 段落間の余白を調整 */
+
+.prose h2 {
+    /*  ✨ h2見出しデザイン  ✨ */
+    font-size: 1.75rem;
+    font-weight: bold;
+    color: var(--primary-color); /* メインカラーを見出しに */
+    margin-top: 2rem;
+    margin-bottom: 1rem;
+    border-bottom: 3px solid var(--secondary-color-gold); /* 下線にアクセントカラー */
+    padding-bottom: 0.3rem;
+}
+
+.prose h3 {
+    /*  🔷 h3見出しデザイン  🔷 */
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: var(--primary-dark-color); /* サブカラーで見出しに落ち着きを */
+    margin-top: 1.5rem;
+    margin-bottom: 0.8rem;
+    padding-left: 0.7rem;
+    border-left: 5px solid var(--secondary-color-gold); /* 左線にアクセントカラー */
+}
+
+
+.prose ul.list-none {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+.prose ul.disc-list {
+    list-style-type: disc;
+    padding-left: 1.5em;
+}
+
+.prose ul li { margin-bottom: 0.6em; }
+
+.prose table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 1.5em;
+    border: 1px solid #ddd; /* テーブル全体を囲むボーダー */
+}
+
+.prose th, .prose td {
+    border: 1px solid #ddd;
+    padding: 0.7em; /* パディングを少し広めに */
+    text-align: left;
+}
+
+.prose th {
+    font-weight: bold;
+    background-color: var(--gray-100-color); /* ヘッダー背景色 */
+    color: var(--gray-600-color); /* ヘッダー文字色 */
+}
+
+
+/*  🔗 リンクスタイル  🔗 */
+.hover-link {
+    color: var(--primary-color); /* リンクの基本色をメインカラーに */
+    text-decoration: none; /* 下線なし */
+    transition: color 0.3s ease; /* ホバーアニメーションを滑らかに */
+}
+
+.hover-link:hover {
+    color: var(--primary-dark-color); /* ホバー時、濃いめのメインカラーに */
+    text-decoration: underline; /* ホバー時に下線を表示 (変化をつける) */
+}
+
+
+/*  🖼️ ロゴとブランド  🖼️ */
+.logo {
+    height: 3.5rem; /* 少し大きめのロゴ */
+    width: auto; /* 高さ基準で自動調整 */
+}
+
+.brand-name {
+    /*  🖋️ ナビゲーションロゴ用フォント  🖋️ */
+    font-family: 'Lora', serif;
+    color: var(--primary-dark-color); /* ブランド名を濃いめのメインカラーに */
+    font-size: 1.7rem; /* ブランド名を少し大きく */
+    font-weight: bold;
+    text-decoration: none; /* 下線を削除 */
+}
+
+.brand-name:hover{
+    text-decoration: none; /* ホバー時も下線なし */
+}
+
+
+/*   মেনু メニュー  মেনু */
+.menu a {
+    color: var(--gray-600-color); /* メニューリンク色 */
+    text-decoration: none;
+    margin-left: 1.7rem; /* メニュー項目間隔を少し広げる */
+    font-weight: 500; /* 少し太字に */
+    position: relative; /* ホバーアニメーション用 */
+    overflow: hidden; /* ホバーアニメーション用 */
+    display: inline-block; /* ホバーアニメーション用 */
+}
+
+.menu a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 下線の位置 */
+    width: 100%;
+    height: 2px; /* 下線の太さ */
+    background-color: var(--secondary-color-gold); /* ホバー下線の色をアクセントカラーに */
+    transform: translateX(-100%); /* 初期状態では左に隠す */
+    transition: transform 0.3s ease-out; /* ホバーアニメーションを滑らかに */
+}
+
+.menu a:hover {
+    color: var(--primary-dark-color); /* ホバー時、濃いめのメニューリンク色 */
+}
+
+.menu a:hover::after {
+    transform: translateX(0); /* ホバー時、下線を右から表示 */
+}
+
+
+/*  ナビゲーション パンくずリスト  ナビゲーション */
+.breadcrumbs a {
+    color: var(--gray-500-color);
+    text-decoration: none;
+    font-size: 0.9rem; /* パンくずリストを少し小さく */
+}
+
+.breadcrumbs a:hover {
+    color: var(--primary-color); /* ホバー時、メインカラーに */
+    text-decoration: underline; /* ホバー時に下線 */
+}
+
+
+/*  📰 記事 article  📰 */
+.article {
+    background-color: var(--white-color);
+    border-radius: 0.7rem; /* 角を少し丸く */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08); /* 少し強めのシャドウ */
+    padding: 3rem; /* パディングを少し広げる */
+}
+
+.article-header { margin-bottom: 2.5rem; } /* ヘッダー下の余白を少し広げる */
+
+.article-tags {
+    display: flex;
+    gap: 0.6rem;
+    margin-bottom: 1.2rem;
+}
+
+.tag {
+    background-color: var(--primary-color); /* タグの背景色をメインカラーに */
+    color: var(--white-color);
+    padding: 0.4rem 1rem; /* タグのパディングを調整 */
+    font-size: 0.9rem;
+    border-radius: 0.3rem;
+    font-weight: 500; /* タグの文字を少し太く */
+    transition: background-color 0.3s ease; /* ホバーアニメーション */
+}
+
+.tag:hover {
+    background-color: var(--primary-dark-color); /* ホバー時、濃いめのメインカラーに */
+}
+
+
+.tag.blog {
+    background-color: var(--secondary-color-gold); /* ブログタグをゴールドに */
+    color: var(--white-color); /* ブログタグの文字色を白に */
+}
+
+.article-title {
+    /*  🖋️ 記事タイトル  🖋️ */
+    font-family: 'Lora', serif; /* 記事タイトルフォント */
+    font-size: 2.2rem; /* タイトルを大きく */
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: var(--primary-dark-color); /* タイトル色を濃いめのメインカラーに */
+    border-bottom: 3px solid var(--secondary-color-gold); /* 下線をアクセントカラーに */
+    padding-bottom: 0.6rem;
+    line-height: 1.3; /* 行間を調整 */
+}
+
+.article-image {
+    width: 100%;
+    height: 450px; /* 画像高さを少し高く */
+    object-fit: cover;
+    border-radius: 0.7rem; /* 画像角を少し丸く */
+    margin-bottom: 1.5rem;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1); /* 画像に হালকা シャドウ */
+}
+
+.article-date {
+    color: var(--gray-500-color);
+    font-size: 0.9rem;
+    font-style: italic; /* 日付をitalicに */
+    margin-bottom: 1rem;
+}
+
+.article-body {
+    color: var(--gray-600-color);
+    line-height: 1.9; /* 本文行間をさらに広げる */
+    margin-top: 2.5rem;
+    font-size: 1.1rem; /* 本文フォントサイズを少し大きく */
+}
+
+
+/*  見出しデザイン セクション、サブセクション  見出しデザイン */
+.section-title {
+    /*  🔷 セクションタイトル  🔷 */
+    font-size: 1.8rem; /* セクションタイトルを少し大きく */
+    font-weight: bold;
+    color: var(--primary-color); /* セクションタイトルをメインカラーに */
+    border-left: 6px solid var(--secondary-color-gold); /* 左線を太く */
+    padding-left: 1.2rem;
+    margin-bottom: 2rem;
+    margin-top: 2.5rem; /* セクションタイトル上の余白を調整 */
+    line-height: 1.4; /* 行間を調整 */
+}
+
+.subsection-title {
+    /*  🟪 サブセクションタイトル  🟪 */
+    font-size: 1.4rem; /* サブセクションタイトルを少し大きく */
+    font-weight: bold;
+    color: var(--primary-dark-color); /* サブセクションタイトルを濃いめのメインカラーに */
+    border-left: 3px solid var(--secondary-color-gold);
+    padding-left: 1.2rem;
+    margin-bottom: 1.5rem;
+    margin-top: 2rem; /* サブセクションタイトル上の余白を調整 */
+    display: flex;
+    align-items: center;
+    background-color: var(--gray-100-color); /* 背景色を薄いグレーに */
+    padding-top: 0.7rem;
+    padding-bottom: 0.7rem;
+    border-top-right-radius: 0.3rem;
+    border-bottom-right-radius: 0.3rem;
+}
+
+.point-marker {
+    display: inline-block;
+    width: 0.6rem;
+    height: 0.6rem;
+    background-color: var(--secondary-color-gold);
+    margin-right: 0.6rem;
+    border-radius: 50%; /* 丸いポイントマーカー */
+}
+
+.sub-subsection-title {
+    /*  🟨 サブサブセクションタイトル  🟨 */
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    border-left: 2px solid var(--secondary-color-gold);
+    padding-left: 1rem;
+    margin-bottom: 0.8rem;
+    margin-top: 1.5rem; /* サブサブセクションタイトル上の余白を調整 */
+}
+
+
+/*  リスト List  リスト */
+.stem-list {
+    list-style-type: none;
+    padding-left: 1rem; /* 左パディングを調整 */
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+.stem-list-item {
+    display: flex;
+    align-items: flex-start; /* 上揃え */
+    gap: 0.6rem;
+}
+
+.stem-letter {
+    font-weight: bold;
+    color: var(--primary-color); /* 文字色をメインカラーに */
+    font-size: 1.1rem; /* 文字を少し大きく */
+    margin-top: 0.2rem; /* アイテムとの вертикальное align調整 */
+}
+
+.disc-list {
+    list-style-type: none;
+    padding-left: 1.8rem;
+    margin-bottom: 1.2rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.7rem;
+}
+
+
+/*  表 table  表 */
+.table-container {
+    overflow-x: auto;
+    margin-bottom: 2.5rem;
+}
+
+.program-table {
+    min-width: 100%;
+    border-collapse: collapse;
+    table-layout: auto;
+    border: 2px solid #ddd; /* テーブル全体を囲む太めのボーダー */
+    border-radius: 0.5rem; /* テーブル角を丸く */
+    overflow: hidden; /* 角丸を適用するために必要 */
+}
+
+.table-header {
+    background-color: var(--gray-100-color);
+    color: var(--gray-600-color); /* ヘッダー文字色 */
+}
+
+.table-th, .table-td {
+    border: 1px solid #ddd;
+    padding: 0.8rem; /* セル内パディングを調整 */
+    text-align: left;
+    vertical-align: top; /* セル内上揃え */
+}
+
+.table-th {
+    font-weight: bold;
+    text-transform: uppercase; /* ヘッダーテキストを大文字に */
+    letter-spacing: 0.05em; /* 字間を少し広げる */
+}
+
+.table-tr:nth-child(even) {
+    background-color: var(--gray-50-color); /* 偶数行に背景色 */
+}
+
+
+/*  記事ナビゲーション article-nav  記事ナビゲーション */
+.article-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 3rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #ddd; /* 上部に点線ボーダー */
+}
+
+.prev-article, .next-article {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--gray-600-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500; /* 少し太字に */
+}
+
+.prev-article:hover, .next-article:hover {
+    color: var(--primary-color);
+    text-decoration: underline; /* ホバー時に下線 */
+}
+
+.portfolio-button { /* 戻るボタン用スタイル */
+    display: inline-block;
+    padding: 0.7rem 1.5rem; /* ボタンパディングを調整 */
+    color: var(--gray-600-color);
+    text-decoration: none;
+    border: 2px solid #ddd; /* ボーダーを少し太く */
+    border-radius: 0.3rem;
+    transition: all 0.3s ease-in-out;
+    font-weight: 500; /* 少し太字に */
+}
+
+.portfolio-button:hover {
+    background-color: var(--gray-100-color);
+    border-color: #ccc;
+    color: var(--primary-dark-color); /* ホバー時、濃いめの文字色に */
+}
+
+
+/*  サイドバー sidebar  サイドバー */
+.sidebar {
+    width: 20rem; /* サイドバー幅を少し広げる */
+    flex-shrink: 0;
+    padding-left: 2rem; /* サイドバー左パディング */
+}
+
+.category-box {
+    background-color: var(--gray-50-color);
+    padding: 2rem; /* ボックス内パディングを調整 */
+    border-radius: 0.7rem; /* ボックス角を少し丸く */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05); /* ボックスに হালকা シャドウ */
+}
+
+.category-title {
+    font-size: 1.3rem; /* タイトルを少し大きく */
+    font-weight: bold;
+    margin-bottom: 1.2rem;
+    color: var(--primary-dark-color); /* タイトル色を濃いめのメインカラーに */
+    border-bottom: 2px solid var(--secondary-color-gold); /* 下線をアクセントカラーに */
+    padding-bottom: 0.4rem;
+}
+
+.category-list {
+    list-style-type: none;
+    padding-left: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.category-item {
+    color: var(--gray-600-color);
+    text-decoration: none;
+    transition: color 0.3s ease;
+    font-weight: 500; /* 少し太字に */
+    display: block; /* ホバー下線アニメーションのためにblock要素化 */
+    position: relative; /* ホバー下線アニメーションのためにposition: relative; */
+    overflow: hidden; /* ホバー下線アニメーションのためにoverflow: hidden; */
+}
+
+.category-item::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -2px; /* 下線の位置 */
+    width: 100%;
+    height: 2px; /* 下線の太さ */
+    background-color: var(--secondary-color-gold); /* ホバー下線の色をアクセントカラーに */
+    transform: scaleX(0); /* 初期状態では非表示 */
+    transform-origin: left; /* アニメーションの起点を左端に */
+    transition: transform 0.3s ease-out; /* ホバーアニメーション */
+}
+
+
+.category-item:hover {
+    color: var(--primary-color);
+}
+
+.category-item:hover::after {
+    transform: scaleX(1); /* ホバー時、下線を左から表示 */
+}
+
+
+/*  フッター footer  フッター */
+.footer {
+    background-color: var(--gray-100-color);
+    padding-top: 3rem;
+    padding-bottom: 3rem;
+    border-top: 1px solid #ddd; /* 上部にボーダー */
+}
+
+.copyright {
+    text-align: center;
+    color: var(--gray-500-color);
+    font-size: 0.9rem;
+}
+
+
+/*  コンテンツエリア content-area  コンテンツエリア */
+.content-area {
+    max-width: 78rem; /* コンテンツエリア最大幅を少し広げる */
+    margin-left: auto;
+    margin-right: auto;
+    padding-left: 2.5rem; /* 左右パディングを少し広げる */
+    padding-right: 2.5rem;
+    display: flex;
+    gap: 3rem; /* コンテンツとサイドバーの間隔を広げる */
+}
+
+.main-content {
+    flex-grow: 1;
+    max-width: 60rem; /* メインコンテンツ最大幅を少し広げる */
+}
+
+
+/*  チェックリスト Checklist  チェックリスト */
+ul.checklist { /* または ul だけですべてのulに適用 */
+    list-style: none; /* デフォルトのリストマーカーを非表示 */
+    padding-left: 0; /* 左側のパディングを削除 (必要に応じて調整) */
+}
+
+ul.checklist li { /* または ul li */
+    position: relative; /* 疑似要素の配置基準 */
+    padding-left: 1.8em; /* アイコン表示分の左パディングを確保 */
+    margin-bottom: 0.7em; /* 各項目の間隔 (必要に応じて調整) */
+    display: flex; /* アイコンとテキストを横並びにする */
+    align-items: flex-start; /* 上揃え (アイコンがテキストの先頭に揃うように) */
+    /* align-items: center;   中央揃えにしたい場合はこちら */
+}
+
+ul.checklist li::before { /* または ul li::before */
+    content: '\f00c'; /* Font Awesomeのチェックマークアイコン (例) */
+    font-family: 'Font Awesome 5 Free'; /* Font Awesomeのフォントファミリーを指定 */
+    font-weight: 900; /* Font Awesomeの太さ (Solidスタイル用) */
+    position: absolute; /* li要素を基準に配置 */
+    left: 0; /* 左端に配置 */
+    top: 0; /* 上端に配置 (align-items: flex-start; に合わせる) */
+    color: #03b715; /* チェックマークの色 (例) */
+    /* 必要に応じてアイコンのサイズや位置を調整 */
+    display: inline-block; /* アイコンの表示形式をブロックレベルにする */
+    width: 1.4em; /* アイコンの幅を調整 */
+    text-align: center; /* アイコンを中央揃えにする */
+    margin-left: 0.3em; /* アイコンとテキストの間隔を調整 */
+    font-size: 1.1em; /* アイコンサイズを少し大きく */
+}
+
+
+/* --- 無料PDFプレゼントセクション (大幅修正) --- */
+.free-pdf-title {
+    /* 大幅にインパクトを強化 */
+    background-color: var(--blue-pdf-title);
+    border-left: none;
+    color: var(--white-color);
+    font-size: 2rem; /* さらに大きく */
+    font-weight: 800; /* さらに太く */
+    text-shadow: 3px 3px 5px rgba(0, 0, 0, 0.6); /* 影を濃く */
+    margin-top: 3rem; /* 上マージンを大きく */
+    margin-bottom: 1.5rem; /* 下マージンも設定 */
+    line-height: 1.4; /* 行間を調整 */
+    padding: 1.5rem 2rem; /* パディングを調整 */
+    border-radius: 0.7rem; /* 角を丸く */
+    display: flex;
+    align-items: center;
+    gap: 1rem; /* アイコンとの間隔を調整 */
+    justify-content: center; /* タイトル全体を中央寄せ */
+    text-align: center; /* テキストを中央揃え */
+}
+
+
+.download-icon {
+    font-size: 1.5em; /* アイコンサイズを大きく */
+    color: var(--white-color);
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* アイコンにも影 */
+}
+
+
+.free-pdf-free-word {
+    color: red;
+    margin-right: -0.8em; /* 「無料」と「専門家監修!!」の間隔を詰める */
+    font-size: 1.2em; /* 「無料」を少し大きく */
+}
+
+.free-pdf-expert-supervision {
+    font-size: 1.3em; /* 「専門家監修!!」をさらに大きく */
+    font-weight: bolder; /* さらに強調 */
+    color: #ff0000; /* 黄色を維持 */
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8); /* 影を濃く */
+    margin-left: 0.1em; /* 「無料」との間隔を微調整 */
+    margin-right: 0.4em; /* 「専門家監修!!」と「PDFプレゼント！」の間隔を調整 */
+}
+
+
+.free-pdf-limited-quantity {
+    font-weight: bolder;
+    color: #ffff00;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8); /* 影を濃く */
+    font-size: 1.3em; /* さらに大きく */
+    margin-left: -0.7em; /* 「PDFプレゼント！」との間隔を微調整 */
+    margin-right: -0.7em; /* 間隔を調整 */
+}
+
+
+.free-pdf-description {
+    color: var(--gray-600-color);
+    margin-bottom: 2rem; /* 説明文下の余白を大きく */
+    font-size: 1.05rem; /* 説明文フォントサイズを少し大きく */
+    line-height: 1.7; /* 説明文行間を調整 */
+}
+
+.free-pdf-content-title {
+    display: block;
+    font-size: 1.3rem; /* コンテンツタイトルを大きく */
+    font-weight: bold;
+    color: var(--primary-color); /* コンテンツタイトル色をメインカラーに */
+    margin-bottom: 1rem;
+    margin-top: 2rem; /* 上マージンを調整 */
+    border-bottom: 2px solid var(--secondary-color-gold); /* 下線を追加 */
+    padding-bottom: 0.3rem;
+}
+
+
+.free-pdf-checklist {
+    list-style: none; /* デフォルトのリストマーカーを削除 */
+    padding-left: 0; /* 左パディングを削除 */
+    margin-bottom: 2rem; /* チェックリスト下の余白を大きく */
+}
+
+.free-pdf-checklist li {
+    position: relative; /* 疑似要素の配置基準 */
+    padding-left: 1.8em; /* アイコン分の左パディング確保 */
+    margin-bottom: 0.7em; /* 項目間隔 */
+    font-size: 1.05rem; /* チェックリスト項目フォントサイズを少し大きく */
+    line-height: 1.6; /* チェックリスト項目行間を調整 */
+}
+
+.free-pdf-checklist li::before {
+    content: '\f03a'; /* Font Awesomeのリストアイコン (fas fa-list-ul) */
+    font-family: 'Font Awesome 5 Free';
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 0.2em; /* アイコン位置を微調整 */
+    color: var(--primary-color); /* チェックリストアイコン色をメインカラーに */
+    font-size: 1em; /* アイコンサイズを調整 */
+}
+
+
+.free-pdf-download-button {
+    display: inline-block;
+    padding: 1.5rem 3rem; /* ボタンパディングを大きく */
+    background-color: var(--orange-download-button); /* オレンジ色に変更 */
+    color: var(--white-color);
+    text-decoration: none;
+    border-radius: 0.7rem; /* 角を丸く */
+    font-weight: 900;
+    font-size: 1.3rem; /* ボタンテキストを大きく */
+    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.4); /* 影を濃く */
+    transition: background-color 0.3s ease;
+    letter-spacing: 0.08em; /* 字間を少し広げる */
+}
+
+.free-pdf-download-button:hover {
+    background-color: var(--orange-download-button-hover); /* ホバー時、少し暗いオレンジ色に */
+}
+
+.free-pdf-limited-quantity-button {
+    font-weight: bolder;
+    color: #fffb00;
+    text-shadow: 2px 2px 3px rgba(0, 0, 0, 0.8); /* 影を濃く */
+    font-size: 1.3em; /* さらに大きく */
+    margin-right: -0em; /* 「ダウンロード！」との間隔を詰める */
+    margin-left: 0em; /* 必要に応じて調整 */
+}
+
+
+.free-pdf-note {
+    display: block;
+    font-size: 0.95rem; /* 注意書きフォントサイズを少し大きく */
+    color: var(--gray-500-color);
+    margin-top: 0.8rem; /* 注意書き上マージンを調整 */
+    text-align: right;
+    font-style: italic;
+}
+
+/*  「詳細はこちら」ボタン  */
+
+.experiment-detail-button-area {
+    text-align: center; /* ボタンを中央寄せ */
+    margin-top: 20px; /* 実験内容との間隔 */
+}
+
+.experiment-detail-button {
+    display: inline-block; /* ボタンをインラインブロック要素に */
+    padding: 12px 30px; /* ボタンの余白 */
+    background-color: #f9f0da; /* ボタンの背景色 (例: 薄い黄色) */
+    color: #333; /* ボタンのテキスト色 (例: 濃いグレー) */
+    border-radius: 5px; /* ボタンの角丸 */
+    font-weight: bold; /* ボタンのテキストを太字に */
+    text-decoration: none; /* 下線を削除 */
+    transition: background-color 0.3s ease; /* ホバーアニメーション */
+}
+
+.experiment-detail-button:hover {
+    background-color: #f2e7c9; /* ホバー時の背景色 */
+    transform: translateY(-2px); /* ホバー時に少し上に浮き上がる */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* ホバー時に影をつける */
+}
+
+

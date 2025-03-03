@@ -1,0 +1,128 @@
+/* styles/Works/STEM/Client.css */
+/* 必要に応じてクライアント固有のスタイルを記述 */
+
+:root {
+  --primary-color: #3498db;    /* メインカラー：青 */
+  --secondary-color: #e74c3c;  /* アクセントカラー：赤 */
+  --tertiary-color: #2ecc71;   /* ハイライトカラー：緑 */
+  --bg-light: #f8f8f8;         /* 薄い背景色 */
+  --text-dark: #333;           /* 濃いテキスト色 */
+  --text-medium: #666;         /* 中間テキスト色 */
+  --border-color: #ddd;        /* ボーダー色 */
+}
+
+.work-item-detail h1 {
+  font-size: 2rem;
+  font-weight: 300;
+  margin-bottom: 2rem;
+  color: var(--text-dark);
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+}
+
+.company-info h2 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  color: var(--text-dark);
+}
+
+.company-info p,
+.work-item-col ul,
+.article-item ul {
+  color: var(--text-medium);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+  list-style: none;
+}
+
+.work-item-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-bottom: 2rem;
+}
+
+.work-item-col h3 {
+  font-size: 1.2rem;
+  font-weight: 500;
+  margin-bottom: 1rem;
+  border-bottom: 1px solid var(--border-color);
+  padding-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+.article-list h3 {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin-bottom: 1.5rem;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 0.5rem;
+  color: var(--text-dark);
+}
+
+/* 記事グリッドレイアウト */
+.article-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+/* 記事アイテムのスタイル改善 */
+.article-item {
+  background-color: var(--bg-light);
+  padding: 1.2rem;  /* パディングを増やして余白を広く */
+  border-radius: 8px;  /* 角丸を少し大きく */
+  border-left: 4px solid var(--primary-color);  /* 左側にアクセントボーダー */
+  transition: transform 0.2s, box-shadow 0.2s;  /* アニメーション効果 */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);  /* 微妙な影を追加 */
+  text-decoration: none;
+  display: block;
+}
+
+.article-item:hover {
+  transform: translateY(-5px);  /* ホバー時に少し上に移動 */
+  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);  /* ホバー時に影を強調 */
+}
+
+/* 記事タイトルのスタイル改善 */
+.article-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin-bottom: 0;
+  color: var(--primary-color);
+  transition: color 0.2s;
+  position: relative; 
+  padding-left: 1.5rem; /* アイコン用のスペース */
+  line-height: 1.4;
+}
+
+/* タイトルアイコン */
+.article-item h4::before {
+  content: "\f02d"; /* Font Awesome の本アイコン */
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  color: var(--primary-color);
+}
+
+.article-item:hover h4 {
+  color: #003b79; 
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .work-item-row {
+    grid-template-columns: 1fr;
+  }
+  
+  .article-item {
+    padding: 1rem;
+  }
+  
+  .article-item ul li {
+    padding-left: 1.5rem;
+  }
+}

@@ -1,0 +1,102 @@
+/* science-experiment-additions.css */
+
+/* ステップアイコン用のスタイル */
+.step-icon {
+    background-color: #FF9800; /* オレンジ色 */
+}
+
+/* 注意事項用のアイコン */
+.caution-icon {
+    background-color: #F44336; /* 赤色 */
+}
+
+/* ステップのタイトル */
+.inline-title {
+    position: relative;
+    font-weight: bold;
+    color: var(--primary-dark-color);
+}
+
+/* 実験番号用のスタイリング */
+.stem-icon .fa-1:before,
+.stem-icon .fa-2:before,
+.stem-icon .fa-3:before,
+.stem-icon .fa-4:before {
+    font-family: Arial, sans-serif;
+    font-weight: bold;
+}
+
+.stem-icon .fa-1:before {
+    content: "1";
+}
+
+.stem-icon .fa-2:before {
+    content: "2";
+}
+
+.stem-icon .fa-3:before {
+    content: "3";
+}
+
+.stem-icon .fa-4:before {
+    content: "4";
+}
+
+/* 実験詳細ボタンのカスタマイズ */
+.experiment-detail-button {
+    background-color: #f0f8ff;
+    border: 2px solid var(--primary-color);
+    color: var(--primary-color);
+    font-weight: bold;
+    transition: all 0.3s ease;
+}
+
+.experiment-detail-button:hover {
+    background-color: var(--primary-color);
+    color: white;
+    transform: translateY(-3px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 実験リストのスタイリングを改善 */
+.disc-list {
+    padding-left: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+
+.disc-list li {
+    margin-bottom: 0.5rem;
+    position: relative;
+}
+
+/* 手順の番号アイコンをより明確に */
+.stem-icon-list li {
+    margin-bottom: 1rem;
+}
+
+/* 安全対策セクションのアイコンを強調 */
+.feature-icon.caution-icon {
+    font-size: 1.2rem;
+}
+
+/* サブセクションのタイトル強化 */
+.subsection-title {
+    background-color: rgba(59, 183, 191, 0.1);
+    border-left: 4px solid var(--primary-color);
+    padding: 0.8rem 1rem;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .bonus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .feature-icon-list li {
+        padding: 0.8rem;
+    }
+    
+    .feature-title {
+        font-size: 1.1rem;
+    }
+}

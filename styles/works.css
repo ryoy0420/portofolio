@@ -1,0 +1,254 @@
+/* works.css - 全体的なWorkページのスタイル改善 */
+
+.works-content {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 3rem 2rem;
+  }
+  
+  .works-content h1 {
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+    font-weight: 300;
+    position: relative;
+    display: inline-block;
+    color: #2c3e50;
+    text-align: center;
+    width: 100%;
+  }
+  
+  .works-content h1:after {
+    content: "";
+    position: absolute;
+    bottom: -1rem;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 6rem;
+    height: 3px;
+    background-color: #3498db;
+  }
+  
+  .works-category {
+    margin-bottom: 4rem;
+  }
+  
+  .works-category h2 {
+    font-size: 1.75rem;
+    font-weight: 300;
+    margin-bottom: 2rem;
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 0.5rem;
+    color: #2c3e50;
+    position: relative;
+  }
+  
+  .works-category h2:after {
+    content: "";
+    position: absolute;
+    bottom: -1px;
+    left: 0;
+    width: 4rem;
+    height: 3px;
+    background-color: #3498db;
+  }
+  
+  .note {
+    font-size: 0.9rem;
+    color: #7f8c9a;
+    margin-bottom: 3rem;
+    font-style: italic;
+    padding: 0.75rem 1rem;
+    background-color: rgba(52, 152, 219, 0.05);
+    border-left: 3px solid #3498db;
+    border-radius: 3px;
+  }
+  
+  /* 実績セクション以外の work-item のスタイル改善 */
+  .work-item {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    margin-bottom: 1.5rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-left: 4px solid #3498db;
+  }
+  
+  .work-item:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .work-item h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .work-item h3:before {
+    content: "\f0b1"; /* ブリーフケースアイコン */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3498db;
+  }
+  
+  .work-item p {
+    font-size: 1rem;
+    color: #5a6a7e;
+    line-height: 1.6;
+  }
+  
+  /* 詳細ワークアイテム（フューチャーラーニングなど） */
+  .work-item-detail {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    padding: 2rem;
+    margin-bottom: 2rem;
+    border-left: 4px solid #3498db;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .work-item-detail:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  }
+  
+  .work-item-detail > a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .work-item-detail h3 {
+    font-size: 1.4rem;
+    font-weight: 600;
+    margin-bottom: 1rem;
+    color: #2c3e50;
+    position: relative;
+    padding-left: 2rem;
+  }
+  
+  .work-item-detail h3:before {
+    content: "\f0b1"; /* ブリーフケースアイコン */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    left: 0;
+    top: 2px;
+    color: #3498db;
+  }
+  
+  .work-item-detail > p {
+    font-size: 1rem;
+    color: #5a6a7e;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+  
+  .work-item-col h4 {
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+  }
+  
+  .work-item-col h4 i {
+    margin-right: 0.75rem;
+    color: #3498db;
+  }
+  
+  .work-item-col ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+  
+  .work-item-col ul li {
+    display: flex;
+    align-items: baseline;
+    margin-bottom: 0.75rem;
+    color: #5a6a7e;
+    line-height: 1.5;
+  }
+  
+  .work-item-col ul li i {
+    color: #3498db;
+    margin-right: 0.75rem;
+    font-size: 0.8rem;
+    flex-shrink: 0;
+  }
+  
+  @media (max-width: 768px) {
+    .works-content {
+      padding: 2rem 1.5rem;
+    }
+    
+    .work-item-row {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .work-item-detail, 
+    .work-item {
+      padding: 1.5rem;
+    }
+  }
+
+
+  .card-link {
+    text-decoration: none;
+    color: inherit;
+    display: block;
+  }
+  
+  .clickable-card {
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .clickable-card h3 {
+    color: #3498db;
+    transition: color 0.3s ease;
+  }
+  
+  .clickable-card:hover h3 {
+    color: #2980b9;
+    text-decoration: underline;
+  }
+  
+  .clickable-card::after {
+    content: "\f054"; /* 右矢印アイコン */
+    font-family: "Font Awesome 5 Free";
+    font-weight: 900;
+    position: absolute;
+    top: 2rem;
+    right: 2rem;
+    color: #3498db;
+    font-size: 1.25rem;
+    opacity: 0;
+    transition: opacity 0.3s ease, transform 0.3s ease;
+  }
+  
+  .clickable-card:hover::after {
+    opacity: 1;
+    transform: translateX(5px);
+  }
+  
+  @media (max-width: 768px) {
+    .clickable-card::after {
+      top: 1.5rem;
+      right: 1.5rem;
+      font-size: 1rem;
+    }
+  }

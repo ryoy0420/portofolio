@@ -1,0 +1,473 @@
+.stem-title {
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+    display: block;
+}.feature-title {
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    margin-bottom: 0.3rem;
+    position: relative;
+    padding-right: 0.2rem;
+}
+
+.feature-title::after {
+    content: "：";
+    position: absolute;
+    right: -0.3rem;
+}
+
+.feature-description {
+    color: var(--gray-600-color);
+    line-height: 1.5;
+}/* モチベーションアイコン */
+.motivation-icon {
+    background-color: #009688; /* ティール色 - モチベーション */
+}/* STEM要素アイコンリスト */
+.stem-icon-list,
+.feature-icon-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.5rem 0;
+}
+
+.feature-icon-list li {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+}
+
+.stem-icon-list li{
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 1rem;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.7);
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease;
+
+}
+
+.feature-icon-list li .text-content {
+    flex: 1;
+}
+
+.feature-icon-list li span.font-bold {
+    display: inline;
+    margin-right: 0.3rem;
+}
+
+.stem-icon-list li:hover,
+.feature-icon-list li:hover {
+    transform: translateX(5px);
+}
+
+.stem-icon,
+.feature-icon {
+    font-size: 1.4rem;
+    margin-right: 1rem;
+    width: 2.5rem;
+    height: 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    color: white;
+    flex-shrink: 0;
+    position: relative;
+}
+
+/* アイコンを正確に中央に配置するための調整 */
+.stem-icon i, 
+.stem-icon.fas,
+.feature-icon i,
+.feature-icon.fas {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+/* STEM色分け */
+.science-icon {
+    background-color: #9c27b0; /* 紫色 - 科学 */
+}
+
+.tech-icon {
+    background-color: #2196f3; /* 青色 - 技術 */
+}
+
+.engineering-icon {
+    background-color: #ff9800; /* オレンジ色 - 工学 */
+}
+
+.math-icon {
+    background-color: #4caf50; /* 緑色 - 数学 */
+}
+
+/* メリットアイコン */
+.merit-icon {
+    background-color: #e91e63; /* ピンク色 - メリット */
+}
+
+/* ポイントアイコン */
+.point-icon {
+    background-color: #3f51b5; /* インディゴ色 - ポイント */
+}/* stem-article-additions-revised.css */
+/* STEM教育記事用の改訂スタイル */
+
+/* ハイライトボックス - 記事冒頭の特典告知用 */
+.highlight-box {
+    background-color: rgba(212, 175, 55, 0.15);
+    border-left: 4px solid var(--secondary-color-gold);
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+}
+
+.highlight-box p {
+    margin-bottom: 0;
+    font-weight: 500;
+    text-align: center;
+}
+
+.highlight-box strong {
+    color: var(--primary-dark-color);
+}
+
+.highlight-link {
+    display: inline-block;
+    margin-top: 0.5rem;
+    padding: 0.5rem 1.5rem;
+    background-color: var(--secondary-color-gold);
+    color: white;
+    border-radius: 0.5rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    text-decoration: none;
+}
+
+.highlight-link:hover {
+    background-color: #b8940a;
+    transform: translateY(-2px);
+    box-shadow: 0 3px 6px rgba(0,0,0,0.2);
+    text-decoration: none;
+}
+
+/* ブロッククォート（引用）スタイル */
+.prose blockquote {
+    padding: 1rem 1.5rem;
+    margin: 1.5rem 0;
+    border-left: 4px solid var(--secondary-color-gold);
+    background-color: rgba(212, 175, 55, 0.1);
+    font-style: italic;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+
+.prose blockquote p {
+    margin-bottom: 0;
+}
+
+.prose blockquote strong {
+    color: var(--primary-dark-color);
+}
+
+/* 年齢別おすすめ活動テーブルのスタイル強化 */
+.table-container {
+    margin: 1.5rem 0;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.program-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.table-header {
+    background-color: var(--primary-color);
+}
+
+.table-header .table-th {
+    color: rgb(100, 100, 100);
+    font-weight: bold;
+    padding: 0.8rem 1rem;
+    text-align: left;
+    border: none;
+}
+
+.table-tr:nth-child(even) {
+    background-color: rgba(59, 183, 191, 0.1);
+}
+
+.table-tr:hover {
+    background-color: rgba(59, 183, 191, 0.2);
+}
+
+.table-td {
+    padding: 0.8rem 1rem;
+    border-bottom: 1px solid #eaeaea;
+}
+
+/* PDFプレゼントセクション全体の大幅改訂 */
+.free-pdf-section {
+    background-color: #f5f9fa;
+    border-radius: 1rem;
+    padding: 2rem;
+    margin: 3rem 0;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    border: 1px solid #e0e0e0;
+}
+
+/* PDFヘッダー部分の修正 - 横に並べる */
+.pdf-header {
+    display: flex;
+    align-items: center;
+    background-color: var(--blue-pdf-title);
+    padding: 1.5rem;
+    border-radius: 0.7rem;
+    margin-bottom: 1.5rem;
+}
+
+.download-icon {
+    font-size: 2.5rem;
+    color: white;
+    margin-right: 1rem;
+}
+
+.pdf-title-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.free-pdf-expert-supervision {
+    font-size: 1.3rem;
+    font-weight: bolder;
+    color: #ff0000;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    margin-bottom: 0.3rem;
+}
+
+.free-pdf-limited-quantity {
+    font-weight: bolder;
+    color: #ffff00;
+    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.7);
+    font-size: 1.5rem;
+    line-height: 1.3;
+}
+
+/* 特典内容のグリッドレイアウト */
+.bonus-content {
+    margin: 2rem 0;
+}
+
+.bonus-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    margin-bottom: 1.5rem;
+    color: var(--primary-dark-color);
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.bonus-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+}
+
+.bonus-item {
+    display: flex;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 0.5rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+    align-items: flex-start;
+}
+
+.bonus-number {
+    background-color: var(--primary-color);
+    color: white;
+    width: 2rem;
+    height: 2rem;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+    margin-right: 1rem;
+    flex-shrink: 0;
+}
+
+.bonus-details {
+    flex-grow: 1;
+}
+
+.bonus-item-title {
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    margin-bottom: 0.5rem;
+    font-size: 1.1rem;
+}
+
+.bonus-details p {
+    margin: 0;
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+/* ダウンロード案内セクション */
+.download-instructions {
+    margin: 1.5rem 0;
+    text-align: center;
+}
+
+.download-instructions p {
+    margin-bottom: 0.5rem;
+}
+
+/* 無料ダウンロードボタン */
+.free-pdf-download-button {
+    display: block;
+    width: 100%;
+    max-width: 500px;
+    margin: 2rem auto;
+    padding: 1.5rem 1rem;
+    background-color: var(--orange-download-button);
+    color: white;
+    text-align: center;
+    border-radius: 0.7rem;
+    font-weight: bold;
+    font-size: 1.3rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.free-pdf-download-button:hover {
+    background-color: var(--orange-download-button-hover);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.4);
+    text-decoration: none;
+}
+
+.free-pdf-limited-quantity-button {
+    color: #fffb00;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    position: relative;
+    z-index: 2;
+    display: inline-block;
+    padding: 0 0.5rem;
+}
+
+/* 点滅する赤い丸アイコン */
+.free-pdf-download-button::after {
+    content: '';
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    width: 20px;
+    height: 20px;
+    background-color: #ff0000;
+    border-radius: 50%;
+    animation: pulse 1.5s infinite;
+}
+
+@keyframes pulse {
+    0% { transform: scale(1); opacity: 1; }
+    50% { transform: scale(1.3); opacity: 0.7; }
+    100% { transform: scale(1); opacity: 1; }
+}
+
+/* 期間限定の注釈 */
+.free-pdf-note {
+    text-align: center;
+    font-size: 0.9rem;
+    color: #666;
+    margin-top: 1rem;
+}
+
+/* ディスクリスト（黒丸）のスタイル修正 */
+.disc-list {
+    list-style-type: none;
+    padding-left: 1.5rem;
+    margin-bottom: 1.2rem;
+}
+
+.disc-list li {
+    position: relative;
+    padding-left: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.disc-list li::before {
+    content: '•';
+    position: absolute;
+    left: 0;
+    color: var(--primary-color);
+    font-weight: bold;
+}
+
+/* モバイル対応の追加スタイル */
+@media (max-width: 768px) {
+    .content-area {
+        flex-direction: column;
+    }
+    
+    .sidebar {
+        width: 100%;
+        padding-left: 0;
+        margin-top: 2rem;
+    }
+    
+    .article {
+        padding: 1.5rem;
+    }
+    
+    .article-title {
+        font-size: 1.8rem;
+    }
+    
+    .pdf-header {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .download-icon {
+        margin-right: 0;
+        margin-bottom: 1rem;
+    }
+    
+    .bonus-grid {
+        grid-template-columns: 1fr;
+    }
+    
+    .free-pdf-download-button {
+        padding: 1.2rem 1rem;
+        font-size: 1.1rem;
+    }
+    
+    .free-pdf-limited-quantity {
+        font-size: 1.2rem;
+    }
+}
+
+
+/* STEM記事のリストスタイル */
+.article1-stem-list {
+    list-style-type: none;
+}
+
+.article1-stem-step3-list .article-ready-list {
+    list-style-type: disc;
+}
