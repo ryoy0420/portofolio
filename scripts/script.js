@@ -45,3 +45,32 @@ document.addEventListener('DOMContentLoaded', function() {
       });
   });
 });
+
+
+// scripts/script.js に追加するか、新しいスクリプトファイルを作成してください
+
+document.addEventListener('DOMContentLoaded', function() {
+    // モバイルメニュートグル機能
+    const menuToggle = document.querySelector('.menu-toggle');
+    const menu = document.querySelector('.menu');
+    
+    if (menuToggle) {
+      menuToggle.addEventListener('click', function() {
+        menu.classList.toggle('active');
+      });
+    }
+    
+    // メニュー以外をクリックしたときにメニューを閉じる
+    document.addEventListener('click', function(event) {
+      if (!event.target.closest('.menu') && !event.target.closest('.menu-toggle') && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
+    
+    // ウィンドウサイズが変更されたときにメニューをリセット
+    window.addEventListener('resize', function() {
+      if (window.innerWidth > 767 && menu.classList.contains('active')) {
+        menu.classList.remove('active');
+      }
+    });
+  });

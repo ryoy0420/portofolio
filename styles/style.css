@@ -1,4 +1,3 @@
-
 /* styles/style.css */
 /* リセットCSS (必要に応じて追加) */
 body, h1, h2, h3, p, ul, li {
@@ -50,7 +49,7 @@ h2 {
 }
 
 
-/* ナビゲーション */
+/* ナビゲーション - レスポンシブ対応 */
 nav {
   display: flex;
   justify-content: space-between;
@@ -58,49 +57,58 @@ nav {
   padding: 1rem 2rem;
   background-color: #fff;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 100;
 }
 
 
-/* styles/style.css */
-
 .brand a {
-    display: flex;
-    align-items: center;
-    gap: 1rem; /* ロゴとテキストの間隔 */
-    text-decoration: none;
-    color: inherit;
-  }
+  display: flex;
+  align-items: center;
+  gap: 1rem; /* ロゴとテキストの間隔 */
+  text-decoration: none;
+  color: inherit;
+}
   
 .logo {
-    width: 3rem;
-    height: 3rem;
-  }
+  width: 3rem;
+  height: 3rem;
+}
   
 .brand span {
-    font-size: 1.2rem;      /* 画像に合わせて調整 */
-    font-weight: 400;      /* 画像に合わせて調整 */
-    font-family: sans-serif; /* より一般的なサンセリフ体に */
-    color: #000;            /* 画像に合わせて黒に */
-  }
+  font-size: 1.2rem;      /* 画像に合わせて調整 */
+  font-weight: 400;      /* 画像に合わせて調整 */
+  font-family: sans-serif; /* より一般的なサンセリフ体に */
+  color: #000;            /* 画像に合わせて黒に */
+}
 
+/* モバイルメニューのトグルボタン追加 */
+.menu-toggle {
+  display: none;
+  font-size: 1.5rem;
+  cursor: pointer;
+  color: #666;
+}
+
+.menu {
+  display: flex;
+  align-items: center;
+}
 
 .menu a {
   margin-left: 1.5rem;
   text-decoration: none;
   color: #666;
-  transition: color 0.2s;
+  transition: color 0.2s, transform 0.2s;
 }
-
 
 .menu a:hover {
   color: #333;
+  transform: translateY(-2px);
 }
 
 
-/* 改善したヒーローセクションのCSS */
-
-/* エレガントなフォントを使用したヒーローセクションのCSS（アニメーションなし） */
-
+/* ヒーローセクションのCSS - レスポンシブ対応済み */
 .hero {
   position: relative;
   height: 85vh;
@@ -130,6 +138,7 @@ nav {
   left: 10%;
   transform: translateY(-50%);
   max-width: 40rem;
+  width: 80%;
   z-index: 10;
   color: #fff;
 }
@@ -162,7 +171,6 @@ nav {
 .hero-line, 
 .hero-line-sub {
   display: block;
-  white-space: nowrap;
   position: relative;
 }
 
@@ -195,36 +203,6 @@ nav {
 
 .hero-cta:hover i {
   transform: translateX(5px);
-}
-
-/* レスポンシブ調整 */
-@media (max-width: 768px) {
-  .hero-content {
-    left: 5%;
-    right: 5%;
-  }
-
-  .hero-headline {
-    font-size: 2.2rem;
-  }
-
-  .hero-subtext {
-    font-size: 1.3rem;
-  }
-}
-
-@media (max-width: 480px) {
-  .hero {
-    height: 80vh;
-  }
-
-  .hero-headline {
-    font-size: 1.9rem;
-  }
-
-  .hero-subtext {
-    font-size: 1.1rem;
-  }
 }
 
 /* フェードイン用のアニメーション定義 */
@@ -268,6 +246,114 @@ nav {
   opacity: 0;
   animation: fadeInDown 0.7s ease forwards;
   animation-delay: 2s;
+}
+
+/* レスポンシブ対応 - 強化バージョン */
+/* タブレット (768px〜1023px) */
+@media (max-width: 1023px) {
+  .hero-headline {
+    font-size: 2.4rem;
+  }
+  
+  .hero-subtext {
+    font-size: 1.3rem;
+  }
+  
+  .hero-content {
+    left: 8%;
+    max-width: 80%;
+  }
+}
+
+/* モバイル大 (481px〜767px) */
+@media (max-width: 767px) {
+  /* ナビゲーションモバイルスタイル */
+  nav {
+    padding: 1rem;
+  }
+  
+  .menu-toggle {
+    display: block;
+  }
+  
+  .menu {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    flex-direction: column;
+    background-color: #fff;
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.1);
+    padding: 1rem 0;
+    display: none;
+    z-index: 100;
+  }
+  
+  .menu.active {
+    display: flex;
+  }
+  
+  .menu a {
+    margin: 0;
+    padding: 0.8rem 2rem;
+    width: 100%;
+    text-align: left;
+  }
+  
+  /* ヒーローセクションモバイルスタイル */
+  .hero {
+    height: 75vh;
+  }
+  
+  .hero-content {
+    left: 0;
+    width: 100%;
+    padding: 0 1.5rem;
+    box-sizing: border-box;
+    text-align: center;
+  }
+  
+  .hero-headline {
+    font-size: 2rem;
+  }
+  
+  .hero-subtext {
+    font-size: 1.2rem;
+  }
+  
+  .hero-line, 
+  .hero-line-sub {
+    white-space: normal;
+  }
+}
+
+/* モバイル小 (〜480px) */
+@media (max-width: 480px) {
+  .logo {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+  
+  .brand span {
+    font-size: 1rem;
+  }
+  
+  .hero {
+    height: 85vh;
+  }
+  
+  .hero-headline {
+    font-size: 1.8rem;
+  }
+  
+  .hero-subtext {
+    font-size: 1rem;
+  }
+  
+  .hero-cta {
+    padding: 0.8rem 1.8rem;
+    font-size: 0.9rem;
+  }
 }
 
 
