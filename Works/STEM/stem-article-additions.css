@@ -471,3 +471,201 @@
 .article1-stem-step3-list .article-ready-list {
     list-style-type: disc;
 }
+
+
+.text5-list {
+    list-style-type: none;
+    padding-left: 0;
+    margin: 1.2rem 0;
+}
+
+.text5-list li {
+    position: relative;
+    padding-left: 1.8rem;
+    margin-bottom: 0.7rem;
+    line-height: 1.5;
+}
+
+.text5-list li:before {
+    content: '•';
+    color: var(--primary-color);
+    position: absolute;
+    left: 0.7rem;
+    top: 0;
+    font-size: 1.2rem;
+}
+
+/* 著者欄スタイル */
+.author-box {
+    background-color: #f8f9fa;
+    border-radius: 0.7rem;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+
+.author-avatar {
+    width: 5rem;
+    height: 5rem;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1.5rem;
+    flex-shrink: 0;
+    font-size: 2rem;
+}
+
+.author-info {
+    flex-grow: 1;
+}
+
+.author-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: var(--primary-dark-color);
+    margin-bottom: 0.5rem;
+}
+
+.author-bio {
+    font-size: 0.95rem;
+    line-height: 1.6;
+    color: var(--gray-600-color);
+}
+
+/* 追加する3つのスタイル */
+.highlight-text {
+    color: var(--primary-color);
+    font-weight: 500;
+}
+
+.highlight-text-bold {
+    color: var(--primary-dark-color);
+    font-weight: 700;
+}
+
+.number-highlight {
+    font-weight: bold;
+    color: var(--primary-color);
+    font-size: 1.1em;
+}
+
+
+/* 画像コンテナの共通スタイル */
+.section-image-container,
+.tip-image-container,
+.age-image-container,
+.story-image-container,
+.first-step-image-container,
+.pdf-preview-container {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+/* 画像の共通スタイル */
+.section-image,
+.tip-image,
+.age-image,
+.story-image,
+.first-step-image {
+    max-width: 100%;
+    border-radius: 0.7rem;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+}
+
+/* 画像ホバーエフェクト */
+.section-image:hover,
+.tip-image:hover,
+.age-image:hover,
+.story-image:hover,
+.first-step-image:hover,
+.pdf-preview-image:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
+}
+
+/* キャプションスタイル */
+.image-caption,
+.pdf-preview-caption {
+    font-size: 0.9rem;
+    color: var(--gray-500-color);
+    margin-top: 0.8rem;
+    font-style: italic;
+    text-align: center;
+}
+
+/* PDFプレビューコンテナの特別スタイル */
+.pdf-preview-container {
+    display: flex;
+    justify-content: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+    margin: 2rem 0;
+}
+
+.pdf-preview-item {
+    flex: 1;
+    min-width: 280px;
+    max-width: 350px;
+}
+
+.pdf-preview-image {
+    width: 100%;
+    border: 1px solid #e0e0e0;
+    border-radius: 0.5rem;
+    box-shadow: 0 3px 8px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease;
+}
+
+.pdf-preview-caption {
+    margin-top: 0.8rem;
+    font-weight: 500;
+    color: var(--primary-dark-color);
+    font-style: normal;
+}
+
+/* セクション特有のスタイル調整 */
+.tip-image-container {
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.age-image-container {
+    margin: 1.5rem 0 2.5rem 0;
+}
+
+.story-image-container {
+    margin: 1rem 0 2rem 0;
+}
+
+/* モバイル対応 */
+@media (max-width: 768px) {
+    .pdf-preview-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .pdf-preview-item {
+        max-width: 100%;
+    }
+}
+
+/* 画像をレスポンシブに */
+@media (max-width: 480px) {
+    .section-image-container,
+    .tip-image-container,
+    .age-image-container,
+    .story-image-container,
+    .first-step-image-container {
+        margin: 1.5rem 0;
+    }
+    
+    .image-caption,
+    .pdf-preview-caption {
+        font-size: 0.8rem;
+    }
+}
