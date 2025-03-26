@@ -12,10 +12,16 @@
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Noto+Serif+JP:wght@300;400;700&display=swap" rel="stylesheet">
   <script>
     function toggleMenu() {
-      const menu = document.querySelector('.menu');
-      menu.classList.toggle('active');
+      console.log('メニュートグル実行');
+      var menu = document.querySelector('.menu');
+      // 強制的に表示/非表示を切り替え
+      if (menu.style.display === 'flex') {
+        menu.style.display = 'none';
+      } else {
+        menu.style.display = 'flex';
+      }
     }
-  </script>
+    </script>
 </head>
 <body>
   <nav>
