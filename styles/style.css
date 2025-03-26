@@ -287,10 +287,6 @@ nav {
     padding: 0;
   }
   
-  .menu.active {
-    display: flex !important; /* 強制的に表示 */
-  }
-  
   .menu a {
     padding: 15px 20px;
     border-bottom: 1px solid #eee;

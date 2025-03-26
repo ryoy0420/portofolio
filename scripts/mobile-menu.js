@@ -1,18 +1,19 @@
-// シンプルなモバイルメニュー切り替え
 // mobile-menu.js
 document.addEventListener('DOMContentLoaded', function() {
-    // ハンバーガーメニューをクリックしたとき
+    // メニュートグルボタンと対象メニューの要素を取得
     var menuToggle = document.querySelector('.menu-toggle');
     var menu = document.querySelector('.menu');
     
     if (menuToggle && menu) {
-      menuToggle.onclick = function() {
-        // activeクラスを切り替え
-        if (menu.classList.contains('active')) {
-          menu.classList.remove('active');
+      menuToggle.addEventListener('click', function() {
+        console.log('メニュートグル実行');
+        
+        // display スタイルを切り替え
+        if (menu.style.display === 'flex') {
+          menu.style.display = 'none';
         } else {
-          menu.classList.add('active');
+          menu.style.display = 'flex';
         }
-      };
+      });
     }
   });
