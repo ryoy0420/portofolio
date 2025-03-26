@@ -61,7 +61,6 @@ nav {
   z-index: 100;
 }
 
-
 .brand a {
   display: flex;
   align-items: center;
@@ -76,10 +75,10 @@ nav {
 }
   
 .brand span {
-  font-size: 1.2rem;      /* 画像に合わせて調整 */
-  font-weight: 400;      /* 画像に合わせて調整 */
-  font-family: sans-serif; /* より一般的なサンセリフ体に */
-  color: #000;            /* 画像に合わせて黒に */
+  font-size: 1.2rem;      
+  font-weight: 400;      
+  font-family: sans-serif; 
+  color: #000;            
 }
 
 /* モバイルメニューのトグルボタン追加 */
@@ -107,16 +106,18 @@ nav {
   transform: translateY(-2px);
 }
 
-
-/* ヒーローセクションのCSS - モバイル対応を強化 */
+/* ヒーローセクションのCSS - モバイル表示問題を根本的に解決 */
 .hero {
   position: relative;
   height: 85vh;
   width: 100%;
   overflow: hidden;
+  display: flex;  /* Flexboxを使用 */
+  justify-content: center;  /* 水平方向の中央揃え */
+  align-items: center;  /* 垂直方向の中央揃え */
 }
 
-/* グラデーション背景 (テクスチャ付き) */
+/* グラデーション背景 */
 .hero-gradient {
   position: absolute;
   top: 0;
@@ -124,73 +125,67 @@ nav {
   width: 100%;
   height: 100%;
   background: linear-gradient(135deg, #2E78C7 0%, #68BBE3 100%);
-  /* 微細なパターンで深みを追加 */
-  background-image: 
-    linear-gradient(135deg, #2E78C7 0%, #68BBE3 100%),
-    url("data:image/svg+xml,%3Csvg width='100' height='100' viewBox='0 0 100 100' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M11 18c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm48 25c3.866 0 7-3.134 7-7s-3.134-7-7-7-7 3.134-7 7 3.134 7 7 7zm-43-7c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm63 31c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM34 90c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zm56-76c1.657 0 3-1.343 3-3s-1.343-3-3-3-3 1.343-3 3 1.343 3 3 3zM12 86c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm28-65c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm23-11c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-6 60c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm29 22c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zM32 63c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm57-13c2.76 0 5-2.24 5-5s-2.24-5-5-5-5 2.24-5 5 2.24 5 5 5zm-9-21c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM60 91c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM35 41c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2zM12 60c1.105 0 2-.895 2-2s-.895-2-2-2-2 .895-2 2 .895 2 2 2z' fill='rgba(255,255,255,0.05)' fill-rule='evenodd'/%3E%3C/svg%3E");
+  z-index: 1; /* 背景なので低いz-indexを設定 */
 }
 
-/* 以下のクラスは不要だが、HTMLで参照されている可能性があるため空で残しておく */
-.hero-image {
-  display: none;
-}
-
-.hero-overlay {
+/* 以下のクラスは不要だが、HTML参照のため空で残す */
+.hero-image, .hero-overlay {
   display: none;
 }
 
 .hero-content {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -50%);
-  max-width: 45rem; /* 幅を少し広げる */
-  width: 85%;
+  /* 絶対位置決めをやめて通常のフロー内に配置 */
+  position: relative;
   z-index: 10;
-  color: #fff;
+  width: 85%;
+  max-width: 45rem;
   text-align: center;
+  color: #fff;
+  padding: 0 1rem;
+  box-sizing: border-box;
 }
 
 .text-container {
-  position: relative;
   margin-bottom: 2.5rem;
 }
 
-/* エレガントなタイポグラフィ - サイズアップ&シャドウ追加 */
+/* タイポグラフィ */
 .hero-headline {
   font-family: 'Playfair Display', 'Noto Serif JP', serif;
   font-weight: 700;
-  font-size: 3.2rem; /* サイズアップ */
+  font-size: 3.2rem;
   line-height: 1.4;
   letter-spacing: -0.02em;
   margin-bottom: 1.5rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2); /* シャドウ追加 */
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
 }
 
 .hero-subtext {
   font-family: 'Playfair Display', 'Noto Serif JP', serif;
-  font-size: 1.7rem; /* サイズアップ */
+  font-size: 1.7rem;
   font-weight: 400;
   line-height: 1.7;
   letter-spacing: 0.01em;
   margin-bottom: 1.5rem;
   font-style: italic;
-  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15); /* シャドウ追加 */
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.15);
 }
 
 .hero-line, 
 .hero-line-sub {
   display: block;
-  position: relative;
+  /* 日本語テキストの改行を修正 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
-/* CTAボタンスタイル - 改善版 */
+/* CTAボタン */
 .hero-cta {
   display: inline-block;
   background: rgba(255, 255, 255, 0.2);
   color: #fff;
   text-decoration: none;
-  padding: 1.1rem 2.4rem; /* サイズアップ */
+  padding: 1.1rem 2.4rem;
   border-radius: 50px;
   font-size: 1.05rem;
   font-weight: 500;
@@ -199,7 +194,7 @@ nav {
   transition: all 0.3s ease;
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   border: 2px solid rgba(255, 255, 255, 0.5);
-  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1); /* テキストシャドウ追加 */
+  text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
 }
 
 .hero-cta:hover {
@@ -217,7 +212,7 @@ nav {
   transform: translateX(5px);
 }
 
-/* フェードイン用のアニメーション定義 */
+/* アニメーション */
 @keyframes fadeInDown {
   from {
     opacity: 0;
@@ -229,14 +224,12 @@ nav {
   }
 }
 
-/* 各要素のアニメーション設定 */
 .hero-line, 
 .hero-line-sub {
   opacity: 0;
   animation: fadeInDown 0.7s ease forwards;
 }
 
-/* 順番に表示されるよう遅延を設定 */
 .hero-line:nth-child(1) {
   animation-delay: 0.3s;
 }
@@ -253,15 +246,13 @@ nav {
   animation-delay: 1.5s;
 }
 
-/* CTAボタンのフェードイン */
 .hero-cta {
   opacity: 0;
   animation: fadeInDown 0.7s ease forwards;
   animation-delay: 2s;
 }
 
-/* レスポンシブ対応 - モバイル対応強化バージョン */
-/* タブレット (768px〜1023px) */
+/* レスポンシブ対応 */
 @media (max-width: 1023px) {
   .hero-headline {
     font-size: 2.8rem;
@@ -269,10 +260,6 @@ nav {
   
   .hero-subtext {
     font-size: 1.5rem;
-  }
-  
-  .hero-content {
-    max-width: 85%;
   }
 }
 
@@ -311,47 +298,22 @@ nav {
     text-align: left;
   }
   
-  /* ヒーローセクションモバイルスタイル */
-  .hero {
-    height: 85vh; /* モバイルでも高さを確保 */
-  }
-  
-  .hero-content {
-    width: 90%;
-    padding: 0 1rem;
-    /* 中央寄せを強化 */
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    text-align: center;
-  }
-  
+  /* ヒーローセクションのレイアウトを変更せず、サイズのみ調整 */
   .hero-headline {
     font-size: 2.2rem;
-    /* テキストが切れないように調整 */
-    max-width: 100%;
-    margin-left: auto;
-    margin-right: auto;
-    /* 行の高さを調整して縦方向のスペースを調整 */
-    line-height: 1.5;
+    line-height: 1.3;
   }
   
   .hero-subtext {
     font-size: 1.3rem;
-    /* 行の高さを調整して縦方向のスペースを節約 */
-    line-height: 1.6;
+    line-height: 1.5;
   }
   
-  .hero-line, 
-  .hero-line-sub {
-    white-space: normal;
-    /* 日本語の改行問題を修正 */
-    word-break: keep-all;
-    overflow-wrap: break-word;
+  .hero-content {
+    width: 90%;
   }
 }
 
-/* モバイル小 (〜480px) */
 @media (max-width: 480px) {
   .logo {
     width: 2.5rem;
@@ -363,24 +325,22 @@ nav {
   }
   
   .hero {
-    height: 90vh; /* より多くの高さを確保 */
+    height: 80vh;
   }
   
   .hero-headline {
     font-size: 1.9rem;
-    margin-bottom: 1.2rem; /* 間隔を調整 */
+    margin-bottom: 1.2rem;
   }
   
   .hero-subtext {
     font-size: 1.1rem;
-    margin-bottom: 1.8rem; /* ボタンとの間隔を調整 */
+    margin-bottom: 1.8rem;
   }
   
   .hero-cta {
     padding: 0.9rem 1.9rem;
     font-size: 0.95rem;
-    /* ボタンのサイズをより適切に */
-    width: auto;
     min-width: 160px;
   }
   
@@ -389,19 +349,12 @@ nav {
     font-size: 1.8rem; /* アイコンを少し大きく */
   }
   
-  /* モバイルでの縦幅が足りない場合のフォールバック */
+  /* 縦に小さい画面向けの対応 */
   @media (max-height: 600px) {
     .hero {
       height: auto;
       min-height: 450px;
-    }
-    
-    .hero-headline {
-      font-size: 1.7rem;
-    }
-    
-    .hero-subtext {
-      font-size: 1rem;
+      padding: 3rem 0;
     }
   }
 }
