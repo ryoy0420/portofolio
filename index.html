@@ -19,9 +19,16 @@
         <span>Ryo Yoneyama</span>
       </a>
     </div>
-    <div class="menu-toggle">
+    
+    <!-- メニュートグルボタン - 右上に配置 -->
+    <div class="menu-toggle" onclick="toggleMenu()">
       <i class="fas fa-bars"></i>
     </div>
+    
+    <!-- オーバーレイ背景 -->
+    <div class="menu-overlay" onclick="toggleMenu()"></div>
+    
+    <!-- メニュー -->
     <div class="menu">
       <a href="/">Home</a>
       <a href="/about.html">About</a>
@@ -163,7 +170,12 @@
 
   <script src="scripts/script.js"></script>
   <script src="scripts/pencil-writing-effect.js"></script>
-  <script src="scripts/mobile-menu.js"></script>
+  <script>
+    function toggleMenu() {
+      document.querySelector('.menu').classList.toggle('active');
+      document.querySelector('.menu-overlay').classList.toggle('active');
+    }
+  </script>
   
 </body>
 </html>
