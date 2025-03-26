@@ -108,7 +108,7 @@ nav {
 }
 
 
-/* /* ヒーローセクションのCSS - 改善版 */
+/* ヒーローセクションのCSS - モバイル対応を強化 */
 .hero {
   position: relative;
   height: 85vh;
@@ -260,7 +260,7 @@ nav {
   animation-delay: 2s;
 }
 
-/* レスポンシブ対応 - 強化バージョン */
+/* レスポンシブ対応 - モバイル対応強化バージョン */
 /* タブレット (768px〜1023px) */
 @media (max-width: 1023px) {
   .hero-headline {
@@ -272,7 +272,7 @@ nav {
   }
   
   .hero-content {
-    max-width: 80%;
+    max-width: 85%;
   }
 }
 
@@ -313,26 +313,41 @@ nav {
   
   /* ヒーローセクションモバイルスタイル */
   .hero {
-    height: 75vh;
+    height: 85vh; /* モバイルでも高さを確保 */
   }
   
   .hero-content {
-    width: 100%;
-    padding: 0 1.5rem;
-    box-sizing: border-box;
+    width: 90%;
+    padding: 0 1rem;
+    /* 中央寄せを強化 */
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center;
   }
   
   .hero-headline {
     font-size: 2.2rem;
+    /* テキストが切れないように調整 */
+    max-width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    /* 行の高さを調整して縦方向のスペースを調整 */
+    line-height: 1.5;
   }
   
   .hero-subtext {
     font-size: 1.3rem;
+    /* 行の高さを調整して縦方向のスペースを節約 */
+    line-height: 1.6;
   }
   
   .hero-line, 
   .hero-line-sub {
     white-space: normal;
+    /* 日本語の改行問題を修正 */
+    word-break: keep-all;
+    overflow-wrap: break-word;
   }
 }
 
@@ -348,20 +363,46 @@ nav {
   }
   
   .hero {
-    height: 85vh;
+    height: 90vh; /* より多くの高さを確保 */
   }
   
   .hero-headline {
     font-size: 1.9rem;
+    margin-bottom: 1.2rem; /* 間隔を調整 */
   }
   
   .hero-subtext {
     font-size: 1.1rem;
+    margin-bottom: 1.8rem; /* ボタンとの間隔を調整 */
   }
   
   .hero-cta {
     padding: 0.9rem 1.9rem;
     font-size: 0.95rem;
+    /* ボタンのサイズをより適切に */
+    width: auto;
+    min-width: 160px;
+  }
+  
+  /* モバイルメニューの表示をさらに調整 */
+  .menu-toggle {
+    font-size: 1.8rem; /* アイコンを少し大きく */
+  }
+  
+  /* モバイルでの縦幅が足りない場合のフォールバック */
+  @media (max-height: 600px) {
+    .hero {
+      height: auto;
+      min-height: 450px;
+    }
+    
+    .hero-headline {
+      font-size: 1.7rem;
+    }
+    
+    .hero-subtext {
+      font-size: 1rem;
+    }
   }
 }
 
